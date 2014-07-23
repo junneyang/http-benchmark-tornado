@@ -1,0 +1,20 @@
+{	"protocol_type":"post",
+	"data_type":"json",
+	"url_string":"http://10.81.15.47:18080/lbs/da/openservice",
+	"headers":{"Content-type":"application/json"},
+	"body":[{
+		"service": "ItemService",
+		"method": "GetItemsByItem",
+		"request": {
+		"header": {
+				"subservice":"sub",
+				"secretkey": "pass",
+				"servicekey": "key1"
+		},
+		"algorithmId": "topic_rev_poi",
+		"item_ids": ["9977193541978760286"]
+		}
+	}],
+	"connection_tmout":3000,
+	"request_tmout":3000
+}
