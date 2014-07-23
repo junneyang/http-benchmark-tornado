@@ -106,7 +106,7 @@ def main():
     import os
     os.system(cmdstr)
 
-    print(u"start benchmark test...")
+    #print(u"start benchmark test...")
     if(options.processnum != -1):
         process.fork_processes(options.processnum)
     '''logging.basicConfig(level=logging.DEBUG,format='[%(levelname)s] (%(asctime)s) <%(message)s>',datefmt='%a,%Y-%m-%d %H:%M:%S',
@@ -118,14 +118,14 @@ def main():
                 filemode='a')
     easyhttpbc=easyhttpbenchmark(options.clientnum,options.testtime,options.flag,datafile_json)
     easyhttpbc.benchmark_test()
-    print(u"benchmark test end...")
+    #print(u"benchmark test end...")
 
     from xmlrpclib import ServerProxy
     svr=ServerProxy("http://localhost:4321")
-    print("total_req_cnt:"+str(easyhttpbc.total_req_cnt))
+    '''print("total_req_cnt:"+str(easyhttpbc.total_req_cnt))
     print("total_res_cnt:"+str(easyhttpbc.total_res_cnt))
     print("total_err_cnt:"+str(easyhttpbc.total_err_cnt))
-    print("total_nul_cnt:"+str(easyhttpbc.total_nul_cnt))
+    print("total_nul_cnt:"+str(easyhttpbc.total_nul_cnt))'''
 
     svr.set_test_time(easyhttpbc.testtime)
     svr.stat_total_req_cnt(easyhttpbc.total_req_cnt)
