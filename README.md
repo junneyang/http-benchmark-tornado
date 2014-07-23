@@ -8,7 +8,7 @@ easyhttpbenchmark
 * 支持随机发送。
 * 统计输出完备，支持QPS统计、延迟统计。    
 * 结构灵活，可方便扩展成多机结构。  
-* 固定QPS模式实际应用很少，暂未考虑此功能。
+* 固定QPS模式实际应用很少，暂不考虑此功能。
 
 ### Dependencies:    
 * tornado=>>http://www.tornadoweb.org/en/stable/
