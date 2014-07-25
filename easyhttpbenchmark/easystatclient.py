@@ -9,7 +9,7 @@ if __name__ == "__main__":
     print("""======================================================================================
 |                                 TEST REPORT                                 |
 ======================================================================================""")
-    print("""|  ttest_time              :"""+str(svr.get_test_time())+" min")
+    print("""|  test_time              :"""+str(svr.get_test_time())+" min")
     print("""|  total_req_cnt           :"""+str(svr.ret_total_req_cnt()))
     print("""|  total_res_cnt           :"""+str(svr.ret_total_res_cnt()))
     print("""|  total_err_cnt           :"""+str(svr.ret_total_err_cnt()))
