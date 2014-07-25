@@ -17,6 +17,8 @@ easyhttpbenchmark
 * 运行如下命令一键式启动性能测试：    
 ./start.sh 0 500 1 0 ./testdata/http_post_json.data
 ![image](screenshot/001.jpg)     
+* 测试报告如下:    
+![image](screenshot/report.jpg)
 * 命令行参数解释如下:    
 ![image](screenshot/002.jpg)
 
