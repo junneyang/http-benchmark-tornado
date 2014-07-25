@@ -121,7 +121,10 @@ def main():
     #print(u"benchmark test end...")
 
     from xmlrpclib import ServerProxy
-    svr=ServerProxy("http://localhost:4321")
+    cfg_json=json.load(open("./conf/easyhttpbenchmark.conf", "r"),encoding='utf-8')
+    stat_rpc_server=cfg_json['stat_rpc_server']
+    stat_rpc_port=cfg_json['stat_rpc_port']
+    svr=ServerProxy("http://"+stat_rpc_server+":"+stat_rpc_port)
     '''print("total_req_cnt:"+str(easyhttpbc.total_req_cnt))
     print("total_res_cnt:"+str(easyhttpbc.total_res_cnt))
     print("total_err_cnt:"+str(easyhttpbc.total_err_cnt))

@@ -103,7 +103,11 @@ def shutdown():
     return 1
 
 def stat():
-    svr=SimpleXMLRPCServer(("", 4321), allow_none=True)
+    import json
+    cfg_json=json.load(open("./conf/easyhttpbenchmark.conf", "r"),encoding='utf-8')
+    stat_rpc_server=cfg_json['stat_rpc_server']
+    stat_rpc_port=cfg_json['stat_rpc_port']
+    svr=SimpleXMLRPCServer((stat_rpc_server, int(stat_rpc_port)), allow_none=True)
     #svr=ThreadXMLRPCServer(("", 4321), allow_none=True)
     print 'started...'
     svr.register_function(stat_total_req_cnt)
