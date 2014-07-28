@@ -13,7 +13,7 @@ if [ $# != 6 ] ; then
 	echo -e "|usage		: ./start.sh processnum maxclientnum clientnum testtime flag testdata"
 	echo -e "|example	: ./start.sh 0 1000 200 1 0 ./testdata/http_post_json.data"
 	echo -e "|-------------------------------------------------------------------------------------"
-	echo -e "|more usage details please type 'python easyhttpbenchmark.py -h' for help."
+	echo -e "|more		: more usage details, type 'python easyhttpbenchmark.py -h' for help."
 	echo -e "======================================================================================"
 	exit 1; 
 fi 

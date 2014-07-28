@@ -112,7 +112,7 @@ def main():
         process.fork_processes(options.processnum)
     '''logging.basicConfig(level=logging.DEBUG,format='[%(levelname)s] (%(asctime)s) <%(message)s>',datefmt='%a,%Y-%m-%d %H:%M:%S',
         filename="./log/process."+str(tornado.process.task_id())+".log",filemode='w')'''
-    logging.basicConfig(level=logging.DEBUG,
+    logging.basicConfig(level=logging.ERROR,
                 format='[%(levelname)s] [%(asctime)s] [%(filename)s-line:%(lineno)d] [%(funcName)s-%(threadName)s] %(message)s',
                 datefmt='%a,%Y-%m-%d %H:%M:%S',
                 filename="./log/easyhttpbenchmark.log",
