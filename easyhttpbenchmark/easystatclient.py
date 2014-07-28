@@ -7,7 +7,7 @@ if __name__ == "__main__":
     stat_rpc_port=cfg_json['stat_rpc_port']
     svr=ServerProxy("http://"+stat_rpc_server+":"+stat_rpc_port)
     print("""======================================================================================
-|                                 TEST REPORT                                 |
+|                                 TEST REPORT                                        |
 ======================================================================================""")
     print("""|  client_num              : """+str(svr.ret_clientnum()))
     print("""|  maxconnectoin           : """+str(svr.ret_maxclientnum()))
