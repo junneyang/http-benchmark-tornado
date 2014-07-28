@@ -81,15 +81,15 @@ class easyhttpbenchmark(object):
 
         if response.error:
             self.total_err_cnt+=1
-
-        self.ret=response.body
-        if(int(self.flag) == 1):
-            print self.ret
-        #logging.info(u"Recv New Response")
-        if self.ret != 'None':
-            self.total_res_cnt+=1
         else:
-            self.total_nul_cnt+=1
+            self.ret=response.body
+            if(int(self.flag) == 1):
+                print self.ret
+            #logging.info(u"Recv New Response")
+            if self.ret is None:
+                self.total_nul_cnt+=1
+            else:
+                self.total_res_cnt+=1
 
         if time.time()>self.end:
             self._client.close()
@@ -137,7 +137,7 @@ def main():
         svr.stat_clientnum(options.processnum*options.clientnum)
     else:
         svr.stat_maxclientnum(cpu_count*options.maxclientnum)
-        svr.stat_maxclientnum(cpu_count*options.clientnum)
+        svr.stat_clientnum(cpu_count*options.clientnum)
 
     svr.set_test_time(easyhttpbc.testtime)
     svr.stat_total_req_cnt(easyhttpbc.total_req_cnt)
