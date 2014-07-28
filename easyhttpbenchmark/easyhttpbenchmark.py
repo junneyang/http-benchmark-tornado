@@ -134,8 +134,10 @@ def main():
     cpu_count=multiprocessing.cpu_count()
     if(options.processnum != 0):
         svr.stat_maxclientnum(options.processnum*options.maxclientnum)
+        svr.stat_clientnum(options.processnum*options.clientnum)
     else:
         svr.stat_maxclientnum(cpu_count*options.maxclientnum)
+        svr.stat_maxclientnum(cpu_count*options.clientnum)
 
     svr.set_test_time(easyhttpbc.testtime)
     svr.stat_total_req_cnt(easyhttpbc.total_req_cnt)

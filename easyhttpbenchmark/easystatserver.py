@@ -19,6 +19,7 @@ total_over_30=0
 total_res_time=0
 
 maxclientnum=0
+clientnum=0
 
 def stat_total_req_cnt(req_cnt):
     global total_req_cnt
@@ -106,6 +107,13 @@ def ret_maxclientnum():
     global maxclientnum
     return maxclientnum
 
+def stat_clientnum(client_num):
+    global clientnum
+    clientnum+=client_num
+def ret_clientnum():
+    global clientnum
+    return clientnum
+
 def shutdown():
     global finished
     finished = True
@@ -146,6 +154,8 @@ def stat():
 
     svr.register_function(stat_maxclientnum)
     svr.register_function(ret_maxclientnum)
+    svr.register_function(stat_clientnum)
+    svr.register_function(ret_clientnum)
 
     while not finished:
         #svr.serve_forever()
