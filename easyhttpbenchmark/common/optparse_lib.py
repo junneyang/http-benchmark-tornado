@@ -19,16 +19,16 @@ class optparse_lib(object):
                     the default mode is 0.'''
         parse.add_option('-p','--processnum',help=help,type='int',metavar='Integer',dest="processnum",default=0)
 
-        help=u"max http client numbers of each process"
+        help=u"max http client numbers of each process, default maxclientnum is 1000."
         parse.add_option('-m','--maxclientnum',help=help,type='int',metavar='Integer',dest="maxclientnum",default=1000)
 
-        help=u"client number of each process"
+        help=u"client number of each process, default clientnum is 200."
         parse.add_option('-c','--clientnum',help=help,type='int',metavar='Integer',dest="clientnum",default=200)
 
-        help=u"total test time,minute as unit,the default time is 2 minutes."
+        help=u"total test time,minute as unit, the default time is 1 minute."
         parse.add_option('-t','--testtime',help=help,type='float',metavar='Float',dest="testtime",default=1)
 
-        help=u"whether to print the std output.1 represents true,0 represents false."
+        help=u"whether to print the std output.1 represents true,0 represents false.default is 0."
         parse.add_option('-f','--flag',help=help,type='int',metavar='Integer',dest="flag",default=0)
 
         options,args=parse.parse_args()
