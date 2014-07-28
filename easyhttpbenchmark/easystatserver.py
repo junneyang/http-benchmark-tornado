@@ -109,7 +109,7 @@ def ret_maxclientnum():
 
 def stat_clientnum(client_num):
     global clientnum
-    clientnum+=client_num
+    clientnum=client_num
 def ret_clientnum():
     global clientnum
     return clientnum
