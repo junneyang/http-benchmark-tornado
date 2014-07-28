@@ -9,6 +9,9 @@ if __name__ == "__main__":
     print("""======================================================================================
 |                                 TEST REPORT                                 |
 ======================================================================================""")
+    print("""|  maxconnectoin           : """+str(svr.ret_maxclientnum()))
+    print("""|-------------------------------------------------------------------------------------""")
+
     print("""|  test_time(min)          : """+str(svr.get_test_time()))
     print("""|  total_req_cnt           : """+str(svr.ret_total_req_cnt()))
     print("""|  total_res_cnt           : """+str(svr.ret_total_res_cnt()))

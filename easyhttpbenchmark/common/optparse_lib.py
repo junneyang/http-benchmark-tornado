@@ -9,7 +9,7 @@ class optparse_lib(object):
         usage=u"""python %prog [Options] testdata
         testdata:\tpath of test data file.
 
-        python %prog -p 0 -c 500 -t 1 -f 0 ./testdata/http_post_json.data"""
+        python %prog -p 0 -m 1000 -c 200 -t 1 -f 0 ./testdata/http_post_json.data"""
         version=u"%prog 1.0"
         parse=optparse.OptionParser(usage=usage,version=version)
 
@@ -19,8 +19,11 @@ class optparse_lib(object):
                     the default mode is 0.'''
         parse.add_option('-p','--processnum',help=help,type='int',metavar='Integer',dest="processnum",default=0)
 
+        help=u"max http client numbers of each process"
+        parse.add_option('-m','--maxclientnum',help=help,type='int',metavar='Integer',dest="maxclientnum",default=1000)
+
         help=u"client number of each process"
-        parse.add_option('-c','--clientnum',help=help,type='int',metavar='Integer',dest="clientnum",default=500)
+        parse.add_option('-c','--clientnum',help=help,type='int',metavar='Integer',dest="clientnum",default=200)
 
         help=u"total test time,minute as unit,the default time is 2 minutes."
         parse.add_option('-t','--testtime',help=help,type='float',metavar='Float',dest="testtime",default=1)
@@ -44,5 +47,5 @@ class optparse_lib(object):
 
 if __name__ == "__main__":
     options,datafile_json=optparse_lib().parse_args()
-    print(options.processnum,options.clientnum,options.testtime,options.flag,datafile_json)
+    print(options.processnum,options.maxclientnum,options.clientnum,options.testtime,options.flag,datafile_json)
 

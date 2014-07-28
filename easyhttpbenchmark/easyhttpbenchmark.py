@@ -11,7 +11,8 @@ import os
 import random
 
 class easyhttpbenchmark(object):
-    def __init__(self,clientnum,testtime,flag,datafile_json):
+    def __init__(self,maxclientnum,clientnum,testtime,flag,datafile_json):
+        self.maxclientnum=maxclientnum
         self.clientnum=clientnum
         self.testtime=testtime
         self.flag=flag
@@ -21,7 +22,7 @@ class easyhttpbenchmark(object):
         self.connection_tmout=self.datafile_json['connection_tmout']
         self.request_tmout=self.datafile_json['request_tmout']
         if(self.protocol_type == 'post' or self.protocol_type == 'get'):
-            self._client=tornado.httpclient.AsyncHTTPClient(self._io_loop,max_clients=self.clientnum)
+            self._client=tornado.httpclient.AsyncHTTPClient(self._io_loop,max_clients=self.maxclientnum)
 
         self.total_req_cnt=0
         self.total_res_cnt=0
@@ -116,7 +117,7 @@ def main():
                 datefmt='%a,%Y-%m-%d %H:%M:%S',
                 filename="./log/easyhttpbenchmark.log",
                 filemode='a')
-    easyhttpbc=easyhttpbenchmark(options.clientnum,options.testtime,options.flag,datafile_json)
+    easyhttpbc=easyhttpbenchmark(options.maxclientnum,options.clientnum,options.testtime,options.flag,datafile_json)
     easyhttpbc.benchmark_test()
     #print(u"benchmark test end...")
 
@@ -129,6 +130,12 @@ def main():
     print("total_res_cnt:"+str(easyhttpbc.total_res_cnt))
     print("total_err_cnt:"+str(easyhttpbc.total_err_cnt))
     print("total_nul_cnt:"+str(easyhttpbc.total_nul_cnt))'''
+    import multiprocessing
+    cpu_count=multiprocessing.cpu_count()
+    if(options.processnum != 0):
+        svr.stat_maxclientnum(options.processnum*options.maxclientnum)
+    else:
+        svr.stat_maxclientnum(cpu_count*options.maxclientnum)
 
     svr.set_test_time(easyhttpbc.testtime)
     svr.stat_total_req_cnt(easyhttpbc.total_req_cnt)
