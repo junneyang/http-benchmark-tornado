@@ -11,6 +11,7 @@ if [ $# != 6 ] ; then
 	echo -e "|                                 Usage Instructions                                 |"
 	echo -e "======================================================================================"
 	echo -e "|usage          : ./start.sh processnum maxclientnum clientnum testtime flag testdata"
+:<<EOF
 	echo -e "  processnum    : 多进程模式, 建议在高性能测试场景(QPS>1000)使用."
 	echo -e "                    -1 : 关闭多进程模式;"
 	echo -e "                    0  : 自动检测VCPU个数, 启动同等个数进程;"
@@ -23,7 +24,10 @@ if [ $# != 6 ] ; then
 	echo -e "                    1 : 打印;"
 	echo -e "  testdata      : 测试数据文件路径, 测试数据文件格式参考./testdata/readme.txt."
 	echo -e "|-------------------------------------------------------------------------------------"
+EOF
 	echo -e "|example        : ./start.sh 0 1000 200 1 0 ./testdata/http_post_json.data"
+	echo -e "|-------------------------------------------------------------------------------------"
+	echo -e "|more           : more usage details, type 'python easyhttpbenchmark.py -h' for help."
 	echo -e "======================================================================================"
 	exit 1; 
 fi 
