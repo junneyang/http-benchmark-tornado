@@ -98,7 +98,10 @@ def ret_total_res_time():
 def ret_avg_res_time():
     global total_res_time
     global total_res_cnt
-    return total_res_time/total_res_cnt
+    if(total_res_cnt ==0):
+        return 0
+    else:
+        return total_res_time/total_res_cnt
 
 def stat_maxclientnum(max_clientnum):
     global maxclientnum
