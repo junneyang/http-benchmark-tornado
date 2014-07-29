@@ -121,35 +121,38 @@ def main():
     easyhttpbc.benchmark_test()
     #print(u"benchmark test end...")
 
-    from xmlrpclib import ServerProxy
-    cfg_json=json.load(open("./conf/easyhttpbenchmark.conf", "r"),encoding='utf-8')
-    stat_rpc_server=cfg_json['stat_rpc_server']
-    stat_rpc_port=cfg_json['stat_rpc_port']
-    svr=ServerProxy("http://"+stat_rpc_server+":"+stat_rpc_port)
-    '''print("total_req_cnt:"+str(easyhttpbc.total_req_cnt))
-    print("total_res_cnt:"+str(easyhttpbc.total_res_cnt))
-    print("total_err_cnt:"+str(easyhttpbc.total_err_cnt))
-    print("total_nul_cnt:"+str(easyhttpbc.total_nul_cnt))'''
-    import multiprocessing
-    cpu_count=multiprocessing.cpu_count()
-    if(options.processnum != 0):
-        svr.stat_maxclientnum(options.processnum*options.maxclientnum)
-        svr.stat_clientnum(options.processnum*options.clientnum)
-    else:
-        svr.stat_maxclientnum(cpu_count*options.maxclientnum)
-        svr.stat_clientnum(cpu_count*options.clientnum)
+    try:
+        from xmlrpclib import ServerProxy
+        cfg_json=json.load(open("./conf/easyhttpbenchmark.conf", "r"),encoding='utf-8')
+        stat_rpc_server=cfg_json['stat_rpc_server']
+        stat_rpc_port=cfg_json['stat_rpc_port']
+        svr=ServerProxy("http://"+stat_rpc_server+":"+stat_rpc_port)
+        '''print("total_req_cnt:"+str(easyhttpbc.total_req_cnt))
+        print("total_res_cnt:"+str(easyhttpbc.total_res_cnt))
+        print("total_err_cnt:"+str(easyhttpbc.total_err_cnt))
+        print("total_nul_cnt:"+str(easyhttpbc.total_nul_cnt))'''
+        import multiprocessing
+        cpu_count=multiprocessing.cpu_count()
+        if(options.processnum != 0):
+            svr.stat_maxclientnum(options.processnum*options.maxclientnum)
+            svr.stat_clientnum(options.processnum*options.clientnum)
+        else:
+            svr.stat_maxclientnum(cpu_count*options.maxclientnum)
+            svr.stat_clientnum(cpu_count*options.clientnum)
 
-    svr.set_test_time(easyhttpbc.testtime)
-    svr.stat_total_req_cnt(easyhttpbc.total_req_cnt)
-    svr.stat_total_res_cnt(easyhttpbc.total_res_cnt)
-    svr.stat_total_err_cnt(easyhttpbc.total_err_cnt)
-    svr.stat_total_nul_cnt(easyhttpbc.total_nul_cnt)
+        svr.set_test_time(easyhttpbc.testtime)
+        svr.stat_total_req_cnt(easyhttpbc.total_req_cnt)
+        svr.stat_total_res_cnt(easyhttpbc.total_res_cnt)
+        svr.stat_total_err_cnt(easyhttpbc.total_err_cnt)
+        svr.stat_total_nul_cnt(easyhttpbc.total_nul_cnt)
 
-    svr.stat_total_below_10(easyhttpbc.below_10)
-    svr.stat_total_between_10_20(easyhttpbc.between_10_20)
-    svr.stat_total_between_20_30(easyhttpbc.between_20_30)
-    svr.stat_total_over_30(easyhttpbc.over_30)
-    svr.stat_total_res_time(easyhttpbc.total_res_time)
+        svr.stat_total_below_10(easyhttpbc.below_10)
+        svr.stat_total_between_10_20(easyhttpbc.between_10_20)
+        svr.stat_total_between_20_30(easyhttpbc.between_20_30)
+        svr.stat_total_over_30(easyhttpbc.over_30)
+        svr.stat_total_res_time(easyhttpbc.total_res_time)
+    except Exception as e:
+        logging.error(str(e))
 
 
 if __name__ == "__main__":
