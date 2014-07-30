@@ -1,8 +1,8 @@
-Êı¾İÎÄ¼şĞèÊ¹ÓÃutf-8¸ñÊ½£º
-1.protocol_type:	HTTPĞ­ÒéÀàĞÍ£¬½öÖ§³ÖPOST¡¢GET£¬Ä¬ÈÏpost
-2.data_type			HTTPÇëÇóÊı¾İÀàĞÍ£¬½öÖ§³ÖJSON¸ñÊ½£¬Ä¬ÈÏjson
-3.url_string		ÇëÇóurl£¬Àı£º"http://10.81.12.112:18080/lbs/da/openservice"
-4.headers			HTTPÇëÇóÍ·£¬Àı£º{"Content-type":"application/json"}
-5.body				HTTPÇëÇóbody£¬bodyÅäÖÃÎªÊı×éĞÎÊ½,Ö§³Ö¶à¸öÇëÇóËæ»ú·¢ËÍ,Ä¬ÈÏÖ»ÓĞÒ»¸öÇëÇó
-6.connection_tmout	Á¬½Ó³¬Ê±Ê±¼äÅäÖÃ£¬µ¥Î»£ºms£¬Ä¬ÈÏ3000
-7.request_tmout		ÇëÇó³¬Ê±Ê±¼äÉèÖÃ£¬µ¥Î»£ºms£¬Ä¬ÈÏ3000
+æ•°æ®æ–‡ä»¶éœ€ä½¿ç”¨utf-8æ ¼å¼, é…ç½®é¡¹è¯´æ˜å¦‚ä¸‹ï¼š
+1.protocol_type     :    HTTPåè®®ç±»å‹ï¼Œä»…æ”¯æŒPOSTã€GETï¼Œé»˜è®¤post
+2.data_type         :    HTTPè¯·æ±‚æ•°æ®ç±»å‹ï¼Œä»…æ”¯æŒJSONæ ¼å¼ï¼Œé»˜è®¤json
+3.url_string        :    è¯·æ±‚urlï¼Œä¾‹ï¼š"http://10.81.12.112:18080/lbs/da/openservice"
+4.headers           :    HTTPè¯·æ±‚å¤´ï¼Œä¾‹ï¼š{"Content-type":"application/json"}
+5.body              :    HTTPè¯·æ±‚bodyï¼Œbodyé…ç½®ä¸ºæ•°ç»„å½¢å¼,æ”¯æŒå¤šä¸ªè¯·æ±‚éšæœºå‘é€,é»˜è®¤åªæœ‰ä¸€ä¸ªè¯·æ±‚
+6.connection_tmout  :    è¿æ¥è¶…æ—¶æ—¶é—´é…ç½®ï¼Œå•ä½ï¼šmsï¼Œé»˜è®¤3000
+7.request_tmout     :    è¯·æ±‚è¶…æ—¶æ—¶é—´è®¾ç½®ï¼Œå•ä½ï¼šmsï¼Œé»˜è®¤3000
