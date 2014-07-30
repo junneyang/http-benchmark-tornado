@@ -11,7 +11,7 @@ easyhttpbenchmark
 * 固定QPS模式实际应用很少，暂不考虑此功能。      
 * 免安装，下载直接使用。     
 
-### Dependencies(ignorance):    
+### Dependencies(ignore):    
 * tornado=>>http://www.tornadoweb.org/en/stable/     
 * pyinstaller=>>http://www.pyinstaller.org/     
 
