@@ -8,14 +8,16 @@ easyhttpbenchmark
 * 支持随机发送。
 * 统计输出完备，支持QPS统计、延迟统计。    
 * 结构灵活，可方便扩展成多机结构。  
-* 固定QPS模式实际应用很少，暂不考虑此功能。
+* 固定QPS模式实际应用很少，暂不考虑此功能。      
+* 免安装，下载直接使用。     
 
-### Dependencies:    
-* tornado=>>http://www.tornadoweb.org/en/stable/
+### Dependencies(ignorance):    
+* tornado=>>http://www.tornadoweb.org/en/stable/     
+* pyinstaller=>>http://www.pyinstaller.org/     
 
 ### Usage:
 * 运行如下命令一键式启动性能测试：    
-./start.sh 0 500 1 0 ./testdata/http_post_json.data
+./start_build.sh 0 1000 200 1 0 ./testdata/http_post_json.data
 ![image](screenshot/001.jpg)     
 * 测试报告如下:    
 ![image](screenshot/report.jpg)
