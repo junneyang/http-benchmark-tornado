@@ -68,3 +68,5 @@ if __name__ == '__main__':
 
     mail_send(subject,content,img_file,from_mail_addr,to_mail_addr,mail_server)
 
+
+
