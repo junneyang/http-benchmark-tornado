@@ -100,26 +100,30 @@ class easyhttpbenchmark(object):
         self._client.fetch(self.get_request(), callback=lambda response:self.handle_request(response, start_time))
 
 def main():
-    options,datafile_json=optparse_lib().parse_args()
+    try:
+        options,datafile_json=optparse_lib().parse_args()
 
-    cmdstr="""nohup python easystatserver.py > /dev/null 2>&1 &"""
-    #status,output=cmd_execute(cmdstr)
-    import os
-    os.system(cmdstr)
+        cmdstr="""nohup python easystatserver.py > /dev/null 2>&1 &"""
+        #cmdstr="""nohup ./easystatserver > /dev/null 2>&1 &"""
+        #status,output=cmd_execute(cmdstr)
+        import os
+        os.system(cmdstr)
 
-    #print(u"start benchmark test...")
-    if(options.processnum != -1):
-        process.fork_processes(options.processnum)
-    '''logging.basicConfig(level=logging.DEBUG,format='[%(levelname)s] (%(asctime)s) <%(message)s>',datefmt='%a,%Y-%m-%d %H:%M:%S',
-        filename="./log/process."+str(tornado.process.task_id())+".log",filemode='w')'''
-    logging.basicConfig(level=logging.ERROR,
-                format='[%(levelname)s] [%(asctime)s] [%(filename)s-line:%(lineno)d] [%(funcName)s-%(threadName)s] %(message)s',
-                datefmt='%a,%Y-%m-%d %H:%M:%S',
-                filename="./log/easyhttpbenchmark.log",
-                filemode='a')
-    easyhttpbc=easyhttpbenchmark(options.maxclientnum,options.clientnum,options.testtime,options.flag,datafile_json)
-    easyhttpbc.benchmark_test()
-    #print(u"benchmark test end...")
+        #print(u"start benchmark test...")
+        if(options.processnum != -1):
+            process.fork_processes(options.processnum)
+        '''logging.basicConfig(level=logging.DEBUG,format='[%(levelname)s] (%(asctime)s) <%(message)s>',datefmt='%a,%Y-%m-%d %H:%M:%S',
+            filename="./log/process."+str(tornado.process.task_id())+".log",filemode='w')'''
+        logging.basicConfig(level=logging.ERROR,
+                    format='[%(levelname)s] [%(asctime)s] [%(filename)s-line:%(lineno)d] [%(funcName)s-%(threadName)s] %(message)s',
+                    datefmt='%a,%Y-%m-%d %H:%M:%S',
+                    filename="./log/easyhttpbenchmark.log",
+                    filemode='a')
+        easyhttpbc=easyhttpbenchmark(options.maxclientnum,options.clientnum,options.testtime,options.flag,datafile_json)
+        easyhttpbc.benchmark_test()
+        #print(u"benchmark test end...")
+    except Exception as e:
+        logging.error(str(e))
 
     try:
         from xmlrpclib import ServerProxy

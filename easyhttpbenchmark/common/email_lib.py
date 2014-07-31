@@ -29,34 +29,34 @@ def mail_send(subject,content,img_file,from_mail_addr,to_mail_addr,mail_server):
     smtp.quit()
 
 if __name__ == '__main__':
-    subject = u"easyhttpbenchmark性能测试报告"
-    content = u"<h1 style='color:black;text-align:center;font-size:20px;font-family:微软雅黑'>easyhttpbenchmark性能测试报告</h1>"
+    subject = u"【测试报告】easyhttpbenchmark性能测试报告"
+    content = u"<div style='color:black;text-align:center;display:block;font-size:20px;font-family:微软雅黑'>easyhttpbenchmark性能测试报告</div>"
 
-    content += u"<p style='font-family:微软雅黑;font-size:12px;font-style:italic;text-align:right;margin-right:50%'>"
+    content += u"<div style='font-family:微软雅黑;font-size:12px;font-style:italic;text-align:center;'>"
     content += u"<a href='https://github.com/JunneYang/easyhttpbenchmark'>@easyBenchmarkTesttool</a> 2014"
-    content += u"</p>"
+    content += u"</div>"
 
     report = ""
-    report += "<p>======================================================================================</p>"
-    report += "<p>|                                 TEST REPORT                                        |</p>"
-    report += "<p>======================================================================================</p>"
-    report += "<p>|  client_num              : XXX</p>"
-    report += "<p>|  maxconnectoin           : XXX</p>"
-    report += "<p>|-------------------------------------------------------------------------------------</p>"
-    report += "<p>|  test_time(min)          : XXX</p>"
-    report += "<p>|  total_req_cnt           : XXX</p>"
-    report += "<p>|  total_res_cnt           : XXX</p>"
-    report += "<p>|  total_err_cnt           : XXX</p>"
-    report += "<p>|  total_nul_cnt           : XXX</p>"
-    report += "<p>|  QPS(query per second)   : XXX</p>"
-    report += "<p>|-------------------------------------------------------------------------------------</p>"
-    report += "<p>|  avg_res_time(ms)        : XXX</p>"
-    report += "<p>|  below_10(ms)            : XXX</p>"
-    report += "<p>|  between_10_20(ms)       : XXX</p>"
-    report += "<p>|  between_20_30(ms)       : XXX</p>"
-    report += "<p>|  over_30(ms)             : XXX</p>"
-    report += "<p>======================================================================================</p>"
-    report = report.replace(" ","&nbsp;")
+    report += "======================================================================================<br/>"
+    report += "|                                 TEST REPORT                                        |<br/>"
+    report += "======================================================================================<br/>"
+    report += "|  client_num              : XXX<br/>"
+    report += "|  maxconnectoin           : XXX<br/>"
+    report += "|-------------------------------------------------------------------------------------<br/>"
+    report += "|  test_time(min)          : XXX<br/>"
+    report += "|  total_req_cnt           : XXX<br/>"
+    report += "|  total_res_cnt           : XXX<br/>"
+    report += "|  total_err_cnt           : XXX<br/>"
+    report += "|  total_nul_cnt           : XXX<br/>"
+    report += "|  QPS(query per second)   : XXX<br/>"
+    report += "|-------------------------------------------------------------------------------------<br/>"
+    report += "|  avg_res_time(ms)        : XXX<br/>"
+    report += "|  below_10(ms)            : XXX<br/>"
+    report += "|  between_10_20(ms)       : XXX<br/>"
+    report += "|  between_20_30(ms)       : XXX<br/>"
+    report += "|  over_30(ms)             : XXX<br/>"
+    report += "======================================================================================<br/>"
+    #report = report.replace(" ","&nbsp;")
     content += report
 
     #img_file = u"./img/imgtest.png"
@@ -67,6 +67,4 @@ if __name__ == '__main__':
     mail_server = u"mail2-in.baidu.com"
 
     mail_send(subject,content,img_file,from_mail_addr,to_mail_addr,mail_server)
-
-
 

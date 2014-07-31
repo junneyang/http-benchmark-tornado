@@ -33,6 +33,7 @@ EOF
 fi 
 
 python easyhttpbenchmark.py -p $processnum -m $maxclientnum -c $clientnum -t $testtime -f $flag $testdata
+#./easyhttpbenchmark -p $processnum -m $maxclientnum -c $clientnum -t $testtime -f $flag $testdata
 
 python easystatclient.py
-
+#./easystatclient
