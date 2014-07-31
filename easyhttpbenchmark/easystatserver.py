@@ -1,4 +1,5 @@
-#helloserver.py
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 from SimpleXMLRPCServer import SimpleXMLRPCServer
 from SocketServer import ThreadingMixIn
 

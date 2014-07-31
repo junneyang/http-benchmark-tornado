@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
 from xmlrpclib import ServerProxy
 from common.email_lib import *
 import sys
@@ -36,9 +38,9 @@ if __name__ == "__main__":
         to_mail_addr=cfg_json['to_mail_addr']
         mail_server=cfg_json['mail_server']
 
-        content = u"<div style='color:black;text-align:center;display:block;font-size:20px;font-family:Î¢ÈíÑÅºÚ'>easyhttpbenchmarkÐÔÄÜ²âÊÔ±¨¸æ</div>"
+        content = u"<div style='color:black;text-align:center;display:block;font-size:20px;font-family:å¾®è½¯é›…é»‘'>easyhttpbenchmarkæ€§èƒ½æµ‹è¯•æŠ¥å‘Š</div>"
 
-        content += u"<div style='font-family:Î¢ÈíÑÅºÚ;font-size:12px;font-style:italic;text-align:center;'>"
+        content += u"<div style='font-family:å¾®è½¯é›…é»‘;font-size:12px;font-style:italic;text-align:center;'>"
         content += u"<a href='https://github.com/JunneYang/easyhttpbenchmark'>@easyBenchmarkTesttool</a> 2014"
         content += u"</div>"
 
