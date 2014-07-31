@@ -20,4 +20,3 @@ testtime        : 测试时间, 单位: min, 如: 1.
 flag            : 是否在控制台打印请求相应, 0: 不打印; 1: 打印输出, 建议仅在调试模式下使用.
 testdata        : 测试数据文件, 格式要求与详细配置参考 ./testdata/readme.txt .
 
-
