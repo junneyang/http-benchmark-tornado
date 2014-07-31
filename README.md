@@ -10,7 +10,8 @@ easyhttpbenchmark
 * 结构灵活，可方便扩展成多机结构。  
 * 固定QPS模式实际应用很少，暂不考虑此功能。      
 * 免安装，下载直接使用。     
-
+* 支持自动发送测试报告邮件。     
+ 
 ### Dependencies(ignore):    
 * tornado=>>http://www.tornadoweb.org/en/stable/     
 * pyinstaller=>>http://www.pyinstaller.org/     
