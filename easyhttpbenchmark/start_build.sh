@@ -5,12 +5,15 @@ clientnum=$3
 testtime=$4
 flag=$5
 testdata=$6
+from_mail_addr=$7
+to_mail_addr=$8
+mail_server=$9
 
-if [ $# != 6 ] ; then
+if [ $# != 9 ] ; then
 	echo -e "======================================================================================"
 	echo -e "|                                 Usage Instructions                                 |"
 	echo -e "======================================================================================"
-	echo -e "|usage          : ./start_build.sh processnum maxclientnum clientnum testtime flag testdata"
+	echo -e "|usage          : ./start_build.sh processnum maxclientnum clientnum testtime flag testdata from_mail_addr to_mail_addr mail_server"
 :<<EOF
 	echo -e "  processnum    : 多进程模式, 建议在高性能测试场景(QPS>1000)使用."
 	echo -e "                    -1 : 关闭多进程模式;"
@@ -25,7 +28,7 @@ if [ $# != 6 ] ; then
 	echo -e "  testdata      : 测试数据文件路径, 测试数据文件格式参考./testdata/readme.txt."
 	echo -e "|-------------------------------------------------------------------------------------"
 EOF
-	echo -e "|example        : ./start_build.sh 0 1000 200 1 0 ./testdata/http_post_json.data"
+	echo -e "|example        : ./start_build.sh 0 1000 200 1 0 ./testdata/http_post_json.data yangjun03@baidu.com yangjun03@baidu.com mail2-in.baidu.com"
 	echo -e "|-------------------------------------------------------------------------------------"
 	echo -e "|more           : more usage details, type './easyhttpbenchmark -h' for help."
 	echo -e "======================================================================================"
@@ -36,4 +39,4 @@ fi
 ./easyhttpbenchmark -p $processnum -m $maxclientnum -c $clientnum -t $testtime -f $flag $testdata
 
 #python easystatclient.py
-./easystatclient
+./easystatclient $from_mail_addr $to_mail_addr $mail_server

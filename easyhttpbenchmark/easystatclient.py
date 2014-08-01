@@ -5,6 +5,19 @@ from common.email_lib import *
 import sys
 
 if __name__ == "__main__":
+    subject=u"【测试报告】easyhttpbenchmark性能测试报告"
+    if(len(sys.argv) != 4):
+        print("""======================================================================================
+        |                              Usage Instructions                                    |
+        ======================================================================================""")
+        print("""|  usage              : ./easystatclient from_mail_addr to_mail_addr mail_server""")
+        print("""|  example            : ./easystatclient yangjun03@baidu.com yangjun03@baidu.com mail2-in.baidu.com""")
+        print("""======================================================================================""")
+        sys.exit()
+    from_mail_addr=sys.argv[1]
+    to_mail_addr=sys.argv[2]
+    mail_server=sys.argv[3]
+
     import json
     cfg_json=json.load(open("./conf/easyhttpbenchmark.conf", "r"),encoding='utf-8')
     stat_rpc_server=cfg_json['stat_rpc_server']
@@ -33,11 +46,6 @@ if __name__ == "__main__":
     print("""======================================================================================""")
 
     try:
-        subject=cfg_json['subject']
-        from_mail_addr=cfg_json['from_mail_addr']
-        to_mail_addr=cfg_json['to_mail_addr']
-        mail_server=cfg_json['mail_server']
-
         content = u"<div style='color:black;text-align:center;display:block;font-size:20px;font-family:微软雅黑'>easyhttpbenchmark性能测试报告</div>"
 
         content += u"<div style='font-family:微软雅黑;font-size:12px;font-style:italic;text-align:center;'>"
