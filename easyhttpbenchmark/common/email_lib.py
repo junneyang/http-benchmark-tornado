@@ -62,9 +62,9 @@ if __name__ == '__main__':
     #img_file = u"./img/imgtest.png"
     img_file = None
     #content += u"<p><img src='cid:"+img_file+"' alt='"+img_file+"' /></p>"
-    from_mail_addr = u"yangjun03@baidu.com"
-    to_mail_addr = u"yangjun03@baidu.com"
-    mail_server = u"mail2-in.baidu.com"
+    from_mail_addr = u"XXX"
+    to_mail_addr = u"XXX"
+    mail_server = u"XXX"
 
     mail_send(subject,content,img_file,from_mail_addr,to_mail_addr,mail_server)
 

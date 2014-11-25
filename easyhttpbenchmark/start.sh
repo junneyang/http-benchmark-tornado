@@ -28,7 +28,7 @@ if [ $# != 9 ] ; then
 	echo -e "  testdata      : 测试数据文件路径, 测试数据文件格式参考./testdata/readme.txt."
 	echo -e "|-------------------------------------------------------------------------------------"
 EOF
-	echo -e "|example        : ./start.sh 0 1000 200 1 0 ./testdata/http_post_json.data yangjun03@baidu.com yangjun03@baidu.com mail2-in.baidu.com"
+	echo -e "|example        : ./start.sh 0 1000 200 1 0 ./testdata/http_post_json.data XXX XXX XXX"
 	echo -e "|-------------------------------------------------------------------------------------"
 	echo -e "|more           : more usage details, type 'python easyhttpbenchmark.py -h' for help."
 	echo -e "======================================================================================"
