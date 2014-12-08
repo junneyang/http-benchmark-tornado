@@ -30,6 +30,3 @@ http-benchmark-tornado
 * 测试工具架构如下：    
 ![image](screenshot/frame.png)     
 
-
-
-
